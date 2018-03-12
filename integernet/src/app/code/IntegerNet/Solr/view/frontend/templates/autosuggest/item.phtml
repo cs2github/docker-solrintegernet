@@ -1,0 +1,27 @@
+<?php
+/**
+ * integer_net Magento Module
+ *
+ * @category   IntegerNet
+ * @package    IntegerNet_Solr
+ * @copyright  Copyright (c) 2016 integer_net GmbH (http://www.integer-net.de/)
+ * @author     Fabian Schmengler <fs@integer-net.de>
+ */
+/** @var $this \IntegerNet\Solr\Block\Autosuggest\Item */
+
+$image = $this->getAutosuggestImage();
+
+?>
+<div class="integernet_solr-product-image">
+    <a href="<?php echo $this->getProduct()->getProductUrl() ?>"
+       title="<?php echo $this->escapeHtml($this->stripTags($image->title(), null, true)) ?>"
+       class="integernet_solr-product-image"><?php echo $image->imgHtml() ?></a>
+</div>
+<div class="integernet_solr-product-name">
+    <a href="<?php echo $this->getProduct()->getProductUrl() ?>" title="<?php echo $this->escapeHtml($this->stripTags($this->getProduct()->getName(), null, true)); ?>">
+        <?php echo $this->escapeHtml($this->getProduct()->getName()) ?>
+    </a>
+</div>
+<div class="integernet_solr-product-price">
+    <?php echo $this->getProductPrice($this->getProduct()) ?>
+</div>
