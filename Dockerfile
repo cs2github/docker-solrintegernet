@@ -20,7 +20,7 @@ RUN mkdir -p /usr/local/solr && \
     rm solr-6.6.0.tgz
 
 # Create data directory
-RUN mkdir /usr/local/solr/solr-6.6.0/server/data
+RUN mkdir /usr/local/solr/solr-6.6.0/server/solr/data
 
 # Add special configuration
 ADD conf/ /usr/local/solr/solr-6.6.0/server/solr/
@@ -29,7 +29,7 @@ ADD conf/ /usr/local/solr/solr-6.6.0/server/solr/
 RUN chown -R solr:solr /usr/local/solr/solr-6.6.0
 
 # Sync directory before mount is created
-RUN rsync -a /usr/local/solr/solr-6.6.0/server/data /var/tmp/
+RUN rsync -a /usr/local/solr/solr-6.6.0/server/solr /var/tmp/
 
 # Add startup script
 ADD startup /usr/bin/startup

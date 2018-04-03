@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ ! -f /usr/local/solr/solr-6.6.0/server/data/no_sync ]; then
-	rsync -a /var/tmp/data /usr/local/solr/solr-6.6.0/server/
+	rsync -a /var/tmp/solr /usr/local/solr/solr-6.6.0/server/
 fi
 chown -R solr:solr /usr/local/solr
 su -s /bin/bash - solr -c "/usr/local/solr/solr-6.6.0/bin/solr start -f"
